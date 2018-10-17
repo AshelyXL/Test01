@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+</head>
+<body>
+    <h1>出生日期</h1>
+    <form action="/date/" method="post">
+        Year:<input name="year" type="number"/>
+        <br/>
+        Month:<input name="month" type="number"/>
+        <br/>
+        Day:<input name="day" type="number"/>
+        <br/>
+        <input type="submit" value="提交"/>
+    </form>
+    <hr/>
+    <h1 style="color: aqua">日期展示</h1>
+    <table border="2">
+        <thead>
+        <th> 年 </th>
+        <th> 月 </th>
+        <th> 日 </th>
+        </thead>
+        <tbody>
+            {% for d in date %}
+                <tr>
+                    <td>{{ d.year}}</td>
+                    <td>{{ d.month }}</td>
+                    <td>{{ d.day }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <hr/>
+    <form method="get" action="/index/">
+        <button type="submit">Back to index</button>
+    </form>
+
+</body>
+</html>
